@@ -39,9 +39,12 @@ bool shootOneParticle()
 		position += dp;
 
 		// new momentum direction
-		double pX = gRandom->Uniform(-1, 1);
-		double pY = gRandom->Uniform(-1, 1);
-		double pZ = gRandom->Uniform(-1, 1);
+		double theta = gRandom->Uniform(0., TMath::Pi());
+		double phi   = gRandom->Uniform(0., 2. * TMath::Pi());
+
+		double pX = cos(theta);
+		double pY = sin(theta) * cos(phi);
+		double pZ = sin(theta) * sin(phi);
 
 		TVector3 newDir = TVector3(pX, pY, pZ);
 		momentumDirection = newDir.Unit();
