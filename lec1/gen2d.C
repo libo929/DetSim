@@ -4,8 +4,8 @@ void gen2d()
 
 	for(int i = 0; i < 1000000; ++i)
 	{
-		double x = gRandom->Uniform(0, 1) * 2 - 1;
-		double y = gRandom->Uniform(0, 1) * 2 - 1;
+		double x = gRandom->Uniform() * 2 - 1;
+		double y = gRandom->Uniform() * 2 - 1;
 
 		hist->Fill(x, y);
 	}
